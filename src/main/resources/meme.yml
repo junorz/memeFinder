@@ -1,0 +1,7 @@
+database:
+  jdbcUrl: "jdbc:postgresql:biaoqingbao"
+  userName: "postgres"
+  password: "password"
+
+memes:
+  url-prefix: ""
