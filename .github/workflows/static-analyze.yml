@@ -1,0 +1,19 @@
+name: Static Analyze
+on:
+  - push
+  - workflow_dispatch
+jobs:
+  detekt:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup JDK
+        uses: actions/setup-jave@v2
+        with:
+          distribution: 'zulu'
+          java-version: '17'
+      - name: Grant gradle execute permission
+        run: chmod +x ./gradlew
+      - name: Run Detekt
+        run: ./gradlew detekt
